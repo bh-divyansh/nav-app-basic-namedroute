@@ -3,7 +3,8 @@ import 'main.dart';
 import 'contact.dart';
 
 class AboutPage extends StatelessWidget {
-  const AboutPage({Key? key}) : super(key: key);
+  const AboutPage({Key? key, required this.data}) : super(key: key);
+  final String data;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,11 @@ class AboutPage extends StatelessWidget {
                 Navigator.pushNamed(context, '/contact');
               },
               child: Text('Go to Contact Page'),
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(data),
           ],
         ),
       ),

@@ -16,7 +16,7 @@ void main() {
     routes: {
       '/': (context) => MyHomescreen(),
       '/contact': (context) => ContactPage(),
-      '/about': (context) => AboutPage(),
+      // '/about': (context) => AboutPage(),
     },
   ));
 }
@@ -48,7 +48,12 @@ class MyHomescreen extends StatelessWidget {
             ),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/about');
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              AboutPage(data: 'fist page data recd')));
+                  // Navigator.pushNamed(context, '/about', );
                 },
                 child: Text('Go to About Page')),
             SizedBox(
